@@ -1,5 +1,7 @@
+/* HEADER */
+
 * {
-    --button_color: #ff0000;
+    --button_color: #ba1515;
     margin: 0;
 }   
 
@@ -15,33 +17,35 @@ a {
 	text-decoration: none;
 }
 
+.menu a {
+	text-decoration: none;
+	color: #000000;
+}
+
 .header {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	font-family: Arial, Helvetica, sans-serif;
 	box-sizing: border-box; /* Amassa os elementos para dentro */
 	top: 0;
-	z-index: 999; /* Define a dimensão do elemento */
 	height: 11vh;
-	width: 100%;
 	font-size: 1.15rem;
 	padding: 0 30px;
-	background-color: #ff0000;
+	background-color: var(--button_color);
 }
 
 .nome_empresa {
 	color: #000000;
 }
 
-.main_nav a:hover,
-.login_nav a:hover {
+.menu a:hover,
+.login a:hover {
 	color: black;
-	text-decoration: underline;
 }
 
 .logo {
 	display: flex;
-	align-items: center;
+	align-items: center;	
 }
 
 .logo img {
@@ -54,78 +58,81 @@ a {
 	font-size: 2rem;
 }
 
-.main_nav {
+.menu {
 	display: flex;
 	align-items: center;
 }
 
-.main_nav ul {
+.menu ul {
 	display: flex;
 	align-items: center;
 	list-style-type: none;
 	column-gap: 40px;
 }
 
-.login_nav {
+.login {
 	display: flex;
 	align-items: center;
 }
 
-.login_nav ul {
+.login ul {
 	display: flex;
 	list-style-type: none;
 	column-gap: 40px;
 }
 
-.banner {
+/* FOOTER */
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	background: black;
+	height: 150px;
+	color: white;
+	font-size: 0.8rem;
+}
+
+.links {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: flex-start;
-	position: relative;
-	background: url(ringue_banner.jpg) no-repeat;
-	background-size: cover;
-	height: 88vh;
+	row-gap: 15px;
 }
 
-.text_button_container {
-	margin-left: 100px;
-	width: 525px;
+.links ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	column-gap: 10px;
 }
 
-.banner p {
-	font-size: 43px;
-	color: white;
+.links ul li {
+	border-right: 1px solid white;
+	padding-right: 10px;
 }
 
-.button_container {
+.links ul li:last-child {
+	border-right: none;
+}
+
+.redes_sociais {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	width: 200px;
+	flex-direction: column;
+	row-gap: 20px;
 }
 
-.banner .button,
-.enviar_btn {
+.icones {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 10px;
-	border-radius: 5px;
-	border: none;
-	box-shadow: 0 5px 10px 0px black;
-	width: 250px;
-	height: 60px;
-	text-decoration: none;
-	font-weight: 600;
-	color: black;
-	font-size: 1.1rem;
-	background: var(--button_color);
-	transition: all 0.2s;
-	cursor: pointer;
+	justify-content: space-between;
+	column-gap: 25px;
 }
 
-.banner .button:hover,
-.enviar-btn:hover {
-	box-shadow: 0 13px 15px 0px black;
+.redes_sociais i {
+	font-size: 1.8rem;
+}
+
+.redes_sociais img {
+	height: 60%;
 }

@@ -1,0 +1,83 @@
+.banner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	background: url(ringue_banner.jpg) no-repeat;
+	background-size: cover;
+	height: 88vh;
+}
+
+.text_button_container {
+	margin-left: 100px;
+	width: 525px;
+}
+
+.banner p {
+	font-size: 43px;
+	color: white;
+}
+
+.button_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 200px;
+}
+
+.banner .button,
+.enviar_btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 5px 10px 0px black;
+	width: 250px;
+	height: 60px;
+	text-decoration: none;
+	font-weight: 600;
+	color: black;
+	font-size: 1.1rem;
+	background: var(--button_color);
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+.banner .button:hover,
+.enviar-btn:hover {
+	box-shadow: 0 13px 15px 0px black;
+}
+
+#visão {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 55px 200px;
+	/* background-image: linear-gradient(rgb(93, 21, 21), rgba(0, 0, 0, 0.851)); */
+	background-color: rgba(71, 74, 81, 0.648);
+	height: 60vh;
+}
+
+.quem_somos_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 50px;
+	height: 300px;
+}
+
+.quem_somos_text {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: justify;
+	row-gap: 20px;
+}
+
+#visão img{
+	height: 180%;
+}
