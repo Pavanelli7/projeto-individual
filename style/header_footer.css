@@ -1,7 +1,7 @@
 /* HEADER */
 
 * {
-    --button_color: #ba1515;
+    --button_color: #6c0e0e;
     margin: 0;
 }   
 
@@ -88,7 +88,7 @@ a {
 	align-items: center;
 	justify-content: space-evenly;
 	background: black;
-	height: 150px;
+	height: 130px;
 	color: white;
 	font-size: 0.8rem;
 }
