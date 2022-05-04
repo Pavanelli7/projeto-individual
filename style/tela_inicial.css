@@ -7,6 +7,7 @@
 	background: url(../image/ringue_banner.jpg) no-repeat;
 	background-size: cover;
 	height: 88vh;
+	font-family: sans-serif;
 }
 
 .text_button_container {
@@ -56,12 +57,12 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 55px 200px;
+	padding: 40px 200px;
 	background-color: rgba(71, 74, 81, 0.648);
 	height: 60vh;
 	background: url(../image/290824.jpg) no-repeat;
 	background-size: cover;
-	height: 80vh;
+	height: 95vh;
 }
 
 .quem_somos_container {
@@ -80,10 +81,16 @@
 	row-gap: 20px;
 	color: white;
 	font-size: 23px;
+	font-family: sans-serif;
+	/* padding-left: 15%; */
 }
 
-#visão img{
-	height: 180%;
+#img_dois {
+	height: 120%;
+	padding-left: 50px;
+	padding-top: 70px;
+	padding-right: 160px;
+	padding-bottom: 10px;
 }
 
 .quem_somos_container_dois {
@@ -91,8 +98,10 @@
 	align-items: center;
 	justify-content: end;
 	height: 300px;
-	width: 50%;
-	margin-left: 55%;
+	width: 100%;
+	/* margin-left: 55%; */
+	/* padding-left: 50%; */
+
 }
 
 .quem_somos_text_dois {
@@ -103,4 +112,5 @@
 	row-gap: 20px;
 	color: white;
 	font-size: 23px;
+	font-family: sans-serif;
 }
