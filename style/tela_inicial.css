@@ -39,7 +39,7 @@
 	height: 60px;
 	text-decoration: none;
 	font-weight: 600;
-	color: black;
+	color: white;
 	font-size: 1.1rem;
 	background: var(--button_color);
 	transition: all 0.2s;
@@ -61,6 +61,7 @@
 	height: 60vh;
 	background: url(../image/290824.jpg) no-repeat;
 	background-size: cover;
+	height: 80vh;
 }
 
 .quem_somos_container {
@@ -83,4 +84,23 @@
 
 #visão img{
 	height: 180%;
+}
+
+.quem_somos_container_dois {
+	display: flex;
+	align-items: center;
+	justify-content: end;
+	height: 300px;
+	width: 50%;
+	margin-left: 55%;
+}
+
+.quem_somos_text_dois {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: justify;
+	row-gap: 20px;
+	color: white;
+	font-size: 23px;
 }

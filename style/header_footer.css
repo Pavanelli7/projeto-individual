@@ -14,12 +14,12 @@ html {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: none;;
 }
 
 .menu a {
 	text-decoration: none;
-	color: #000000;
+	color: white;
 }
 
 .header {
@@ -32,10 +32,11 @@ a {
 	font-size: 1.15rem;
 	padding: 0 30px;
 	background-color: var(--button_color);
+	color: white;
 }
 
 .nome_empresa {
-	color: #000000;
+	color: white;
 }
 
 .menu a:hover,
@@ -87,7 +88,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-	background: black;
+	background: #010c1f;
 	height: 130px;
 	color: white;
 	font-size: 0.8rem;
