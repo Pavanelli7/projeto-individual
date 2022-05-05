@@ -88,6 +88,18 @@ a {
 	column-gap: 40px;
 }
 
+.login_cadastro {
+	display: flex;
+	align-items: center;
+	padding-right: 10px;
+}
+
+.login_cadastro ul {
+	display: flex;
+	list-style-type: none;
+	column-gap: 40px;
+}
+
 /* FOOTER */
 
 .footer {
