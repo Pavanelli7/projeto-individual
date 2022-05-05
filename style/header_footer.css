@@ -22,6 +22,11 @@ a {
 	color: white;
 }
 
+.login a {
+	text-decoration: none;
+	color: white;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
@@ -89,7 +94,7 @@ a {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
-	background: #010c1f;
+	background: #2b0404;
 	height: 130px;
 	color: white;
 	font-size: 0.8rem;
