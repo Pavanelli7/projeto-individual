@@ -1,0 +1,158 @@
+/* HEADER */
+
+* {
+  --button_color: #6c0e0e;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}   
+
+body {
+  margin: 0;                                                                                                                                                                                                                                                                                                                                                                                                                 
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+a {
+text-decoration: none;;
+}
+
+.menu a {
+text-decoration: none;
+color: white;
+}
+
+.login a {
+text-decoration: none;
+color: white;
+}
+
+.header {
+display: flex;
+justify-content: space-between;
+font-family: Arial, Helvetica, sans-serif;
+box-sizing: border-box; /* Amassa os elementos para dentro */
+top: 0;
+height: 11vh;
+font-size: 1.15rem;
+padding: 0 30px;
+background-color: var(--button_color);
+color: white;
+font-weight: 900;
+}
+
+.nome_empresa {
+color: white;
+}
+
+.menu a:hover,
+.login a:hover {
+color: black;
+}
+
+.logo {
+display: flex;
+align-items: center;	
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nome_empresa {
+padding-left: 10px;
+font-family: monospace;
+font-size: 2rem;
+}
+
+.menu {
+display: flex;
+align-items: center;
+}
+
+.menu ul {
+display: flex;
+align-items: center;
+list-style-type: none;
+column-gap: 40px;
+}
+
+.login {
+display: flex;
+align-items: center;
+}
+
+.login ul {
+display: flex;
+list-style-type: none;
+column-gap: 40px;
+}
+
+.login_cadastro {
+display: flex;
+align-items: center;
+padding-right: 10px;
+}
+
+.login_cadastro ul {
+display: flex;
+list-style-type: none;
+column-gap: 40px;
+}
+
+/* FOOTER */
+
+.footer {
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+background: #2b0404;
+height: 15vh;
+color: white;
+font-size: 0.8rem;
+}
+
+.links {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+row-gap: 15px;
+}
+
+.links ul {
+display: flex;
+list-style-type: none;
+padding: 0;
+column-gap: 10px;
+}
+
+.links ul li {
+border-right: 1px solid white;
+padding-right: 10px;
+}
+
+.links ul li:last-child {
+border-right: none;
+}
+
+.redes_sociais {
+display: flex;
+align-items: center;
+flex-direction: column;
+row-gap: 20px;
+}
+
+.icones {
+display: flex;
+justify-content: space-between;
+column-gap: 25px;
+}
+
+.redes_sociais i {
+font-size: 1.8rem;
+}
+
+.redes_sociais img {
+height: 60%;
+}

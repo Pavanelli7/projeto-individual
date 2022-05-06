@@ -4,7 +4,7 @@
 	justify-content: center;
 	align-items: flex-start;
 	position: relative;
-	background: url(../image/ringue_banner.jpg) no-repeat;
+	background: url(../assets/image/ringue_banner.jpg) no-repeat;
 	background-size: cover;
 	height: 88vh;
 	font-family: sans-serif;
@@ -27,8 +27,7 @@
 	width: 200px;
 }
 
-.banner .button,
-.enviar_btn {
+.banner .button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -60,7 +59,7 @@
 	padding: 40px 200px;
 	background-color: rgba(71, 74, 81, 0.648);
 	height: 60vh;
-	background: url(../image/290824.jpg) no-repeat;
+	background: url(../assets/image/visao.jpg) no-repeat;
 	background-size: cover;
 	height: 95vh;
 }
@@ -88,7 +87,7 @@
 	height: 120%;
 	padding-left: 50px;
 	padding-top: 70px;
-	padding-right: 160px;
+	padding-right: 180px;
 	padding-bottom: 10px;
 }
 

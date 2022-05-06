@@ -1,0 +1,73 @@
+* {
+    padding: 0;
+    margin:  0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: url(../assets/image/floyd.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 89vh;
+    width: 100%;
+    flex-direction: column;
+    flex-direction: row-reverse;
+}
+
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 30%;
+    background-color: #000000cc;
+    border-radius: 10px;
+    box-shadow: 0 0px 20px 5px #adadada3;
+    border: solid 1px black;
+}
+
+.cadastro input {
+    width: 300px;
+    height: 20px;
+    /* border-radius: 5px; */
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: none;
+    border-bottom: solid grey 2px;
+}
+
+textarea:focus, input:focus {
+    box-shadow: none;
+    outline: 0;
+}
+
+.cadastro li {
+    padding-bottom: 7px;
+    color: white;
+    font-size: 15px;
+}
+
+.cadastro ul {
+    list-style-type: none;
+}
+
+.cadastro p {
+    font-size: 50px;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui;
+}
+
+.cadastro_p {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}
