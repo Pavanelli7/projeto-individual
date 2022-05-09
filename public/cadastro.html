@@ -12,9 +12,9 @@
     <script src="./js/funcoes.js"></script>
 
 
-    <link rel="icon" href="../public/assets/image/logodeteste.png">
-    <link rel="stylesheet" href="../public/css/cadastro.css">
-    <link rel="stylesheet" href="../public/css/header_footer.css">
+    <link rel="icon" href="assets/image/logo.png">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/header_footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -24,9 +24,8 @@
 <body>
 
     <div class="header">
-        <a href="../public/tela_inicial.html" class="logo">
-            <img src="../public/assets/image/logodeteste.png" class="logo_img" />
-            <h1 class="nome_empresa">Boxe</h1>
+        <a href="index.html" class="logo">
+            <img src="assets/image/logo.png" class="logo_img" />
         </a>
 
         <div class="menu">
@@ -39,7 +38,7 @@
 
         <div class="login_cadastro">
             <ul>
-                <li>Entrar</li>
+                <li><a href="login.html">Entrar</a></li>
         </div>
     </div>
 
@@ -49,15 +48,17 @@
                 <p>Cadastro</p>
             </div>
             <ul>
-                <li>Nome:<br><input type="text"></li>
-                <li>E-mail:<br><input type="text"></li>
-                <li>Senha:<br><input type="password"></li>
-                <li>Confirmar senha:<br><input type="password"></li>
+                <li>Nome:<br><input id="nome_input" type="text"></li>
+                <li>E-mail:<br><input id="email_input" type="text"></li>
+                <li>Cpf:<br><input id="cpf_input" type="text"></li>
+                <li>Senha:<br><input id="senha_input" type="password"></li>
+                <li>Confirmar senha:<br><input id="confirmacao_senha_input" type="password"></li>
             </ul>
             <div id="button">
-                <button id="button_clicar">Entrar</button>
-                <button id="button_clicar">Cadastrar</button>
+                <button onclick="cadastrar()" id="button_clicar">Cadastrar</button>
             </div>
+            <div class="linha"></div>
+            <p id="linha_p">Já tem cadastro ? <a id="a_login_cadastro" href="login.html">Login</a></p>
         </div>
     </div>
 
@@ -75,142 +76,43 @@
         <div class="redes_sociais">
             <p>Siga-nos nas redes sociais!</p>
             <div class="icones">
-                <i><a href="https://www.instagram.com/ee__pavanelli/"><img src="../public/assets/image/instagram.png" /></a></i>
-                <i><a href="https://www.facebook.com/profile.php?id=100009130331181"><img src="../public/assets/image/facebook.png" /></a></i>
-                <i><a href="https://www.linkedin.com/in/vittor-pavanelli-145932234/"><img src="../public/assets/image/linkedin.png" /></a></i>
+                <i><a href="https://www.instagram.com/ee__pavanelli/"><img src="assets/image/instagram.png" /></a></i>
+                <i><a href="https://www.facebook.com/profile.php?id=100009130331181"><img src="assets/image/facebook.png" /></a></i>
+                <i><a href="https://www.linkedin.com/in/vittor-pavanelli-145932234/"><img src="assets/image/linkedin.png" /></a></i>
             </div>
         </div>
     </div>
-
-    <!-- <div class="header">
-        <div class="container">
-            <h1 class="titulo">AcquaTec</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">
-                        Inicial
-                    </a>
-                </li>
-                <li>
-                    <a href="./simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li>
-                    <a href="./login.html">Login</a>
-                </li>
-                <li class="agora">
-                    <a href="./cadastro.html">Cadastro</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-
-    <div class="banner ">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container tamanho-conteudo">
-            <div class="card medio">
-                <h2>Bem-vindo!</h2>
-                <div class="formulario">
-
-                    
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     
-
-                    <span class="tipo_campo">Nome:</span>
-                    <input id="nome_input" type="text" placeholder="Seu nome">
-
-                    <span class="tipo_campo">Cpf:</span>
-                    <input id="cpf_input" type="text" placeholder="Seu Cpf">
-
-                    <span class="tipo_campo">Nº Celular:</span>
-                    <input id="numero_input" type="text" placeholder="Seu nº">
-
-                    <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="meuemail@provedor.com">
-
-                    <span class="tipo_campo">Senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
-
-                    <span class="tipo_campo">Confirmação da Senha:</span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="******">
-
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
-
-                </div>
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-   
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-        </div>
-    </div> -->
-   
-
-
 </body>
 
 </html>
 
 <script>
     function cadastrar() {
-        aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var nomeVar = nome_input.value;
         var cpfVar = cpf_input.value;
-        var numeroVar = numero_input.value;
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var alerta = ``
 
-        if (nomeVar == "" || cpfVar == "" || numeroVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+        if (nomeVar == "" || cpfVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+            alerta += `Preencha todos os campos para prosseguir!`
         }
 
-        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            alerta +=`Ops, e-mail inválido! Verifique e tente novamente.`
         }
 
-        if (senhaVar != confirmacaoSenhaVar) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "As senhas inseridas devem ser iguais para prosseguir!";
-            finalizarAguardar();
-            return false;
+        else if (senhaVar != confirmacaoSenhaVar) {
+            alerta += `As senhas inseridas devem ser iguais para prosseguir!`
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+
+        if (alerta != ``) {
+            alert(alerta)
+        } else {
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
@@ -223,7 +125,6 @@
                 // Agora vá para o arquivo routes/usuario.js
                 nomeServer: nomeVar,
                 cpfServer: cpfVar,
-                numeroServer: numeroVar, 
                 emailServer: emailVar,
                 senhaServer: senhaVar
             })
@@ -232,24 +133,19 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block"
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso!";
                 window.location = "login.html";
-                limparFormulario();
-                finalizarAguardar();
+                alert(`Cadastro realizado com sucesso`)
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+
         });
 
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
     }
 
 </script>

@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Login</title>
+    <title>Boxe</title>
 
     <script src="./js/funcoes.js"></script>
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="assets/image/logo.png">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/header_footer.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
@@ -20,7 +21,65 @@
 
 <body>
 
-    <!--Header-->
+    <div class="header">
+        <a href="index.html" class="logo">
+            <img src="assets/image/logo.png" class="logo_img" />
+        </a>
+
+        <div class="menu">
+            <ul>
+                <li><a href="#visão">Sobre</a></li>
+                <li>IMC</li>
+                <li><a href="#visão">O que é?</a></li>
+            </ul>
+        </div>
+
+        <div class="login_cadastro">
+            <ul>
+                <li><a href="cadastro.html">Cadastrar</a></li>
+        </div>
+    </div>
+
+    <div class="container_cadastro">
+        <div class="cadastro">
+            <div class="cadastro_p">
+                <p>Login</p>
+            </div>
+            <ul>
+                <li>E-mail:<br><input id="email_input" type="text"></li>
+                <li>Senha:<br><input id="senha_input" type="password"></li>
+            </ul>
+            <div id="button_login">
+                <button onclick="entrar()" id="button_clicar">Entrar</button>
+                <!-- <button id="button_clicar">Cadastrar</button> -->
+            </div>
+            <div class="linha_login"></div>
+            <p id="linha_p">Não tem um login ainda ? <a id="a_login_cadastro" href="cadastro.html">Cadastre-se</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <p>Contato: (11) 98835-6966
+            <ul>
+                <li>NOVIDADES</li>
+                <li>CAMPANHAS</li>
+                <li>DOAÇÕES</li>
+                <li>EVENTOS</li>
+            </ul>
+        </div>
+
+        <div class="redes_sociais">
+            <p>Siga-nos nas redes sociais!</p>
+            <div class="icones">
+                <i><a href="https://www.instagram.com/ee__pavanelli/"><img src="assets/image/instagram.png" /></a></i>
+                <i><a href="https://www.facebook.com/profile.php?id=100009130331181"><img src="assets/image/facebook.png" /></a></i>
+                <i><a href="https://www.linkedin.com/in/vittor-pavanelli-145932234/"><img src="assets/image/linkedin.png" /></a></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header
 
     <div class="header">
         <div class="container">
@@ -80,13 +139,13 @@
         </div>
     </div>
 
-    <!--footer inicio-->
+    footer inicio
     <div class="footer">
         <div class="container">
             <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
         </div>
     </div>
-    <!--footer fim-->
+    footer fim -->
 
 </body>
 
@@ -96,34 +155,26 @@
 
 
     function entrar() {
-        aguardar();
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
+        var alerta = ``
 
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos para prosseguir!";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+            alerta += `Preencha todos os campos para prosseguir!`
         }
 
-        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Ops, e-mail inválido! Verifique e tente novamente.";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            alerta += `Ops, e-mail inválido! Verifique e tente novamente.`
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        // console.log("FORM LOGIN: ", emailVar);
+        // console.log("FORM SENHA: ", senhaVar);
+        if (alerta != ``) {
+            alert(alerta)
+        }
+        else {
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -171,8 +222,5 @@
         return false;
     }
 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-
+}
 </script>

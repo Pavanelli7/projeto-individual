@@ -1,3 +1,4 @@
+
 * {
     padding: 0;
     margin:  0;
@@ -5,7 +6,7 @@
 }
 
 body {
-    background: url(../assets/image/floyd.jpg) no-repeat;
+    background: url(https://ssb.wiki.gallery/images/thumb/1/19/SSBU-Boxing_Ring_1.png/1200px-SSBU-Boxing_Ring_1.png) no-repeat;
     background-size: cover;
 }
 
@@ -27,9 +28,9 @@ body {
     height: 80%;
     width: 30%;
     background-color: #000000cc;
-    border-radius: 10px;
-    box-shadow: 0 0px 20px 5px #adadada3;
-    border: solid 1px black;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0px 20px 5px #adadada3; */
+    /* border: solid 1px black; */
 }
 
 .cadastro input {
@@ -88,6 +89,7 @@ textarea:focus, input:focus {
     color: white;
     box-shadow: 0 5px 10px 0px black;
 	background-color: var(--button_color);
+    cursor: pointer;
 }
 
 .linha {
@@ -124,4 +126,35 @@ textarea:focus, input:focus {
 #a_login_cadastro {
     text-decoration: none;
     color: grey;
+}
+
+/* Box onde vai aparecer o script */
+
+#box_script {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 30%;
+    background-color: #000000cc;
+    /* box-shadow: 0 0px 20px 5px #adadada3; */
+    /* border: solid 1px black; */
+    text-align: center;
+    color: white;
+}
+
+#frase {
+    height: auto;
+    width: 70%;
+    text-align: center;
+}
+
+#box_script p {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#img_script {
+    width: 200px;
 }

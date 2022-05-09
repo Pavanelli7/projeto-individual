@@ -15,17 +15,27 @@ scroll-behavior: smooth;
 }
 
 a {
-text-decoration: none;;
+text-decoration: none;
+color: black;
+}
+
+.button_container a {
+  width: 100%;
 }
 
 .menu a {
 text-decoration: none;
-color: white;
+color: #c1c0a3;
 }
 
 .login a {
 text-decoration: none;
-color: white;
+color: #c1c0a3;
+}
+
+.login_cadastro a {
+  text-decoration: none;
+  color: #c1c0a3;
 }
 
 .header {
@@ -51,13 +61,17 @@ color: white;
 color: black;
 }
 
+.login_cadastro a:hover {
+  color: black;
+}
+
 .logo {
 display: flex;
 align-items: center;	
 }
 
 .logo img {
-  height: 50px;
+  height: 90px;
 }
 
 .nome_empresa {
@@ -69,6 +83,7 @@ font-size: 2rem;
 .menu {
 display: flex;
 align-items: center;
+color: #c1c0a3;
 }
 
 .menu ul {
@@ -81,6 +96,7 @@ column-gap: 40px;
 .login {
 display: flex;
 align-items: center;
+color: #c1c0a3;
 }
 
 .login ul {
@@ -93,6 +109,7 @@ column-gap: 40px;
 display: flex;
 align-items: center;
 padding-right: 10px;
+color: #c1c0a3;
 }
 
 .login_cadastro ul {
