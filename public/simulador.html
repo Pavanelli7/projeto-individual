@@ -24,7 +24,6 @@
     <div class="header">
         <a href="index.html" class="logo">
             <img src="assets/image/logo.png" class="logo_img" />
-            <!-- <h1 class="nome_empresa">Boxe</h1> -->
         </a>
 
         <div class="login">
@@ -38,9 +37,7 @@
     <div class="container_cadastro">
         <div id="box_script">
             <div id="frase">
-                <!-- Seu índice de massa corporal (IMC) é de 22.3. Não se enquadra nos requisitos para ser um lutador. Consulte um médico. -->
             </div>
-            <!-- <img id="img"> -->
         </div>
 
         <!-- Box onde vai as inputs -->
@@ -60,7 +57,6 @@
                 </li>
             </ul>
             <div id="button">
-                <!-- <button id="button_clicar">Entrar</button> -->
                 <button onclick="imagem()" id="button_clicar">Calcular</button>
             </div>
         </div>
@@ -86,7 +82,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
@@ -98,6 +93,9 @@
         var altura = Number(input_altura.value)
         var genero = select_genero.value
         var imc = peso / (altura * altura)
+        var diminuir_peso_mulher = peso - 75
+        var diminuir_peso_homem = peso - 91
+        var aumentar_peso = 48 - peso
 
         if (nome < 3) {
             alert(`Nome inválido`)
@@ -115,13 +113,34 @@
         box_script.innerHTML = `
         <p>Não desista!</p>
         <img src="assets/image/rocky_balboa.webp">
-        Seu índice de massa corporal (IMC) é de ${imc.toFixed(1)}. Não se enquadra nos requisitos para ser um lutador. Consulte um médico.`
+        Seu índice de massa corporal (IMC) é de ${imc.toFixed(1)}. Pra poder lutar seu IMC tem que estar entre 18.5 e 24.9. Consulte um médico.`
         }
 
-        else if (peso < 48) {
-            box_script.innerHTML = `Você não tem peso suficiente para entrar em uma categoria.
+        else if (peso < 48 && genero == "homem") {
+            box_script.innerHTML = `
             <p>Não desista!</p>
-            <img src="assets/image/rocky_balboa.webp">`
+            <img src="assets/image/rocky_balboa.webp">
+            Você não tem peso suficiente para entrar em uma categoria. Ganhe pelo meno ${aumentar_peso}kg pra conseguir lutar no peso mosca`
+        }
+        
+        else if (peso > 91 && genero == "homem") {
+            box_script.innerHTML = `
+            <p>Não desista!</p>
+            <img src="assets/image/rocky_balboa.webp">
+            Você não tem peso suficiente para entrar em uma categoria. Você precisa perder pelo menos ${diminuir_peso_homem}kg pra conseguir lutar no peso pesado.`
+        }
+
+        else if (peso < 48 && genero == "mulher") {
+            box_script.innerHTML = `
+            <p>Não desista!</p>
+            <img style="width: 350px;" src="assets/image/motivacao.webp">
+            Você não tem peso suficiente para entrar em uma categoria. Ganhe pelo menos ${aumentar_peso}kg pra conseguir lutar no peso mosca.`
+        }
+
+        else if (peso >75 && genero == "mulher") {
+            box_script.innerHTML = `<p id="script_p">Não desista!</p>
+            <img style="width: 350px;" src="assets/image/motivacao.webp">
+            Você não tem peso suficiente para entrar em uma categoria. Perca pelo mens ${diminuir_peso_mulher}kg pra conseguir lutar no peso médio.`
         }
 
         else if (peso >= 48 && peso <= 52 && genero == "homem") {
