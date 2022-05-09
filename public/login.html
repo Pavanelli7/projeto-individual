@@ -51,7 +51,6 @@
             </ul>
             <div id="button_login">
                 <button onclick="entrar()" id="button_clicar">Entrar</button>
-                <!-- <button id="button_clicar">Cadastrar</button> -->
             </div>
             <div class="linha_login"></div>
             <p id="linha_p">Não tem um login ainda ? <a id="a_login_cadastro" href="cadastro.html">Cadastre-se</a></p>
@@ -78,75 +77,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Header
-
-    <div class="header">
-        <div class="container">
-            <h1 class="titulo">AcquaTec</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="./index.html">
-                        Inicial
-                    </a>
-                </li>
-                <li>
-                    <a href="./simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="./login.html">Login</a>
-                </li>
-                <li>
-                    <a href="./cadastro.html">Cadastro</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-    <div class="banner">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card">
-                <h2>Olá de volta!</h2>
-                <div class="formulario">
-
-
-                    <span class="tipo_campo">E-mail:</span>
-                    <input id="email_input" type="text" placeholder="Login">
-
-                    <span class="tipo_campo">Senha:</span>
-                    <input id="senha_input" type="password" placeholder="******">
-
-                    <button class="btn" onclick="entrar()">Entrar</button>
-
-
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    footer inicio
-    <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
-        </div>
-    </div>
-    footer fim -->
-
 </body>
 
 </html>
@@ -206,9 +136,7 @@
                 });
 
             } else {
-
                 console.log("Houve um erro ao tentar realizar o login!");
-
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
@@ -218,9 +146,7 @@
         }).catch(function (erro) {
             console.log(erro);
         })
-
         return false;
     }
-
 }
 </script>
