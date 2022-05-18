@@ -130,6 +130,17 @@ color: white;
 font-size: 0.8rem;
 }
 
+.footer_lutas {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #2b0404;
+  height: 15vh;
+  color: white;
+  font-size: 0.8rem;
+  width: 100%;
+  }
+
 .links {
 display: flex;
 flex-direction: column;

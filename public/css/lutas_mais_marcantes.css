@@ -1,0 +1,141 @@
+.banner {
+	display: flex;
+	align-items: flex-start;
+	background: url(../assets/image/background_momentos.jpg) no-repeat;
+	background-size: cover;
+	height: 88.90vh;
+	font-family: sans-serif;
+}
+
+.frase {
+    display: flex;
+    height: 100%;
+    width: 55%;
+	align-items: center;
+	justify-content: center;
+} 
+
+.frase p {
+    color: white;
+	font-size: 500%;
+	font-family: initial;
+}
+
+.container_lutas {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#img_luta {
+	padding: 10px;
+	align-items: center;
+	width: 40%;
+}
+
+#background_color {
+	background-color: #3E0909;
+	color: white;
+}
+
+.luta_1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+}
+
+.luta_2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	background-color: aqua;
+}
+
+.luta_3 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+}
+
+.luta_4 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	background-color: aqua;
+}
+
+.luta_5 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+}
+
+.luta_6 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	background-color: aqua;
+}
+
+.luta_7 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+}
+
+.p1_luta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.p1_luta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.p1_luta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.p1_luta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.p1_luta {
+	width: 100%;
+	padding-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.p2_luta {
+    height: 100%;
+    padding: 10px;
+    font-size: 25px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+}
+
+.luta_1 h1 {
+	padding-top: 10px;
+}
