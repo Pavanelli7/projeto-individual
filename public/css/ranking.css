@@ -1,0 +1,103 @@
+.banner {
+	display: flex;
+	align-items: flex-start;
+    /* background: url(https://batalhadasstartups.com/wp-content/uploads/2020/12/ringue_01-1200x711.jpg) no-repeat; */
+    /* background: url(../assets/image/ringue_melhores.jpg) no-repeat; */
+    background: url(../assets/image/ringueteste.jpg) no-repeat;
+	background-size: cover;
+	height: 88.90vh;
+	font-family: sans-serif;
+}
+
+body {
+    background-color: #050e1f;
+}
+
+.menu ul {
+    margin-right: 140px;
+}
+
+.frase {
+    display: flex;
+    height: 100%;
+    width: 100%;
+	align-items: center;
+	justify-content: center;
+    color: #c1c1a3;
+	font-size: 500%;
+	font-family: initial;
+    font-weight: 900;
+} 
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    width: 98.9vw;
+    background-color: #050e1f;
+}
+
+.lutador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-top: 10px;
+    box-shadow: 0 0 1em black;
+    background-color: #0000ff0a;
+    color: white;
+}
+
+.texto {
+    width: 90%;
+    text-align: justify;
+    padding: 10px;
+}
+
+.foto_lutador {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.foto_lutador_ray {
+    max-width: 62.3%;
+    max-height: 50%;
+}
+
+.foto_lutador_floyd {
+    max-width: 60%;
+    max-height: 50%;
+}
+
+.foto_lutador_ali {
+    max-width: 60%;
+    max-height: 50%;
+}
+
+.foto_lutador_bernard {
+    max-width: 58.7%;
+    max-height: 50%;
+}
+
+.foto_lutador_joe {
+    max-width: 70%;
+    max-height: 50%;
+    margin-top: 11%;
+}
+
+.foto_lutador_oscar {
+    max-width: 110%;
+    max-height: 50%;
+    margin-top: 4%;
+}
+
+.foto_lutador_johnson{
+    max-width: 40%;
+    max-height: 50%;
+    margin-top: 6%;
+}
+
+.foto_lutador_pep{
+    max-width: 58%;
+    max-height: 50%;
+    margin-top: 6%;
+}
