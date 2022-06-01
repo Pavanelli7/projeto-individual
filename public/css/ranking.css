@@ -1,8 +1,6 @@
 .banner {
 	display: flex;
 	align-items: flex-start;
-    /* background: url(https://batalhadasstartups.com/wp-content/uploads/2020/12/ringue_01-1200x711.jpg) no-repeat; */
-    /* background: url(../assets/image/ringue_melhores.jpg) no-repeat; */
     background: url(../assets/image/ringueteste.jpg) no-repeat;
 	background-size: cover;
 	height: 88.90vh;
@@ -100,4 +98,9 @@ body {
     max-width: 58%;
     max-height: 50%;
     margin-top: 6%;
+}
+
+
+#menu_ranking ul {
+    margin-right: 20px;
 }

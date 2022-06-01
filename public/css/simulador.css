@@ -138,8 +138,6 @@ textarea:focus, input:focus {
     height: 80%;
     width: 30%;
     background-color: #000000cc;
-    /* box-shadow: 0 0px 20px 5px #adadada3; */
-    /* border: solid 1px black; */
     text-align: center;
     color: white;
 }

@@ -28,34 +28,71 @@
 
     <div class="menu">
         <ul>
+            <li><a id="lutas_marcantes" href="lutas_mais_marcantes.html">Lutas Marcantes</a></li>
+            <li><a href="ranking.html">Melhores Lutadores</li>
+            <li><a href="ranking_atual.html">Ranking</a></li>
             <li><a href="simulador.html">IMC</a></li>
         </ul>
-    </div>
-
-    <div class="login">
-        <ul>
-            <!-- <li><a href="cadastro.html">Cadastrar</a></li>
-        <li><a href="login.html">Entrar</a></li> -->
     </div>
 </div>
 
 <div class="container">
-    <p>Feedback</p>
     <div class="container_feedback">
         <div class="box_1">
+            <div class="feedback_p">
+                <p>Feedback</p>
+            </div>
             <ul>
-                <li>Qual o motivo da sua visita hoje?<br><input id="nome_input" type="text"></li>
-                <li>Achou o que queria?<br><input id="email_input" type="text"></li>
-                <li>Como posso melhorar o meu produto para você?<br><input id="cpf_input" type="text"></li>
+                <li><span>Qual o motivo da sua visita hoje?</span><input id="motivo_visita_input"  type="text"></li>
+                <li><span>Como posso melhorar o meu produto para você?</span><input id="melhorar_input" type="text"></li>
             </ul>
-        </div>
-
-        <div class="box_2">
+            
             <ul>
-                <li>Como você classificaria sua experiência com o meu site?<br><input id="nome_input" type="text"></li>
-                <li>Quão fácil é navegar pelo meu site?<br><input id="email_input" type="text"></li>
-                <li>Qual é a probabilidade de você recomendar nosso produto a um amigo ou colega?<br><input id="cpf_input" type="text"></li>
+                <li>
+                    <span>Achou o que queria?</span>
+                    <div class="select">
+                        <select id="select_achou">
+                            <option value="1">Sim</option>
+                            <option value="2">Não</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <span>Como você classificaria sua experiência com o meu site?</span>
+                    <div class="select">
+                        <select id="select_site">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </li>
+                <li><span>Quão fácil é navegar pelo meu site?</span>
+                    <div class="select">
+                        <select id="select_navegacao">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </li>
+                <li><span>Qual é a probabilidade de você recomendar nosso produto a um amigo ou colega?</span>
+                    <div class="select">
+                        <select id="select_recomendar">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                </li>
             </ul>
+            <button onclick="guardar()">Clique</button>
         </div>
     </div>
 </div>
@@ -80,6 +117,21 @@
             <i><a href="https://www.linkedin.com/in/vittor-pavanelli-145932234/"><img src="assets/image/linkedin.png" /></a></i>
         </div>
     </div>
-</div>
+</div>  
 
 </body>
+
+<script>
+    function guardar(){
+        var motivo = motivo_visita_input.value
+        var melhorar = melhorar_input.value
+        var achou = Number(select_achou)
+        var site = Number(select_site.value)
+        var navegacao = Number(select_navegacao.value)
+        var recomendar = Number(select_recomendar)
+
+        if (motivo <= 3 || melhorar <= 3) {
+            alert(`Dados inválidos`)
+        }
+    }
+</script>
