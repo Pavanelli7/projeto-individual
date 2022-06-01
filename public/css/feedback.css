@@ -1,0 +1,46 @@
+* {
+    padding: 0;
+    margin:  0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	/* width: 100%; */
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+	align-items: center;
+	height: 109vh;
+	font-size: 50px;
+	border: solid 2px yellow;
+	background: url(../assets/image/banner_teste_feedback.jpg) no-repeat;
+	background-size: cover;
+}
+
+.container_feedback {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 81%;
+	width: 96%;
+	border: solid 2px green;
+}
+
+.container_feedback ul {
+	font-size: 30px;
+}
+
+.box_1 {
+	width: 40%;
+	height: 100%;
+	border: solid 2px blue;
+}
+
+.box_2 {
+	width: 40%;
+	height: 100%;
+	border: solid 2px red;
+}
