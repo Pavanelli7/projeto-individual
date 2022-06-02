@@ -3,31 +3,28 @@
 -- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
 
 /* para workbench - local - desenvolvimento */
-CREATE DATABASE acquatec;
+create database boxe;
+use boxe;
 
-USE acquatec;
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table usuario (
+idUsuario int primary key auto_increment,
+nome varchar(50),
+email varchar(60) unique,
+cpf char(11) unique,
+senha varchar(80)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-    descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
-); 
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	temperatura DECIMAL,
-	umidade DECIMAL,
-	momento DATETIME,
-	fk_aquario INT
+create table feedback (
+idFeedback int auto_increment,
+motivo_visita varchar(100),
+melhorias varchar(100),
+achou char(3),
+experiencia decimal(10,2),
+facilidadeNavegar decimal(10,2),
+recomendar decimal(10,2),
+fkUsuario int,
+foreign key (fkUsuario) references usuario(idUsuario),
+primary key (idFeedback, fkUsuario)
 );
 
 
