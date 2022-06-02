@@ -60,6 +60,55 @@ function entrar(req, res) {
 
 }
 
+
+function feedback(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var motivo = req.body.motivoVar;
+    var melhorar = req.body.melhorarVar;
+    var achou = req.body.achouVar;
+    var site = req.body.siteVar;
+    var navegacao = req.body.navegacaoVar;
+    var recomendar = req.body.recomendarVar;
+    var idUsuario = req.body.idUsuarioVar;
+
+    // Faça as validações dos valores
+    if (motivo == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (melhorar == undefined) {
+        res.status(400).send("Seu cpf está undefined!");   
+    } else if (achou == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else if (site == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (navegacao == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (recomendar == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else if (idUsuario == undefined) {
+        res.status(400).send("Sua senha está undefined!");
+    } else {
+        
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.feedback(motivo, melhorar, achou, site, navegacao, recomendar, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o feedback! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
 function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
@@ -101,5 +150,6 @@ module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar,
+    feedback
 }

@@ -123,15 +123,49 @@
 
 <script>
     function guardar(){
-        var motivo = motivo_visita_input.value
-        var melhorar = melhorar_input.value
-        var achou = Number(select_achou)
-        var site = Number(select_site.value)
-        var navegacao = Number(select_navegacao.value)
-        var recomendar = Number(select_recomendar)
-
-        if (motivo <= 3 || melhorar <= 3) {
+        var motivoVar = motivo_visita_input.value
+        var melhorarVar = melhorar_input.value
+        var achouVar = Number(select_achou.value)
+        var siteVar = Number(select_site.value)
+        var navegacaoVar = Number(select_navegacao.value)
+        var recomendarVar = Number(select_recomendar.value)
+        var idUsuarioVar = sessionStorage.ID_USUARIO
+        console.log(recomendarVar)
+        if (motivoVar <= 3 || melhorarVar <= 3) {
             alert(`Dados inválidos`)
         }
+
+                // Enviando o valor da nova input
+                fetch("/usuarios/feedback", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                motivoServer: motivoVar,
+                melhorarServer: melhorarVar,
+                achouServer: achouVar,
+                siteServer: siteVar,
+                navegacaoServer: navegacaoVar,
+                recomendarServer: recomendarVar,
+                idUsuarioServer: idUsuarioVar
+
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                // window.location = "login.html";
+                alert(`Feedback realizado com sucesso`)
+            } else {
+                throw ("Houve um erro ao tentar realizar o feedback!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
     }
 </script>

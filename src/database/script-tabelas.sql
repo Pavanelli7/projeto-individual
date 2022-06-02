@@ -14,6 +14,7 @@ cpf char(11) unique,
 senha varchar(80)
 );
 
+
 create table feedback (
 idFeedback int auto_increment,
 motivo_visita varchar(100),
@@ -28,8 +29,11 @@ primary key (idFeedback, fkUsuario)
 );
 
 
+insert into usuario(nome, email, cpf, senha) values
+	('Vittor', 'vittor@gmail.com', '49658797816', '123456');
 
-
+insert into feedback(motivo_visita, melhorias, achou, experiencia, facilidadeNavegar, recomendar, fkUsuario)
+	('Pesquisando sobre boxe', 'precisa melhorar o footer', 'Sim', '5', '5', '5', 1);
 /* para sql server - remoto - produção */
 
 CREATE TABLE usuario (
