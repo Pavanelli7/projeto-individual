@@ -63,13 +63,13 @@ function entrar(req, res) {
 
 function feedback(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var motivo = req.body.motivoVar;
-    var melhorar = req.body.melhorarVar;
-    var achou = req.body.achouVar;
-    var site = req.body.siteVar;
-    var navegacao = req.body.navegacaoVar;
-    var recomendar = req.body.recomendarVar;
-    var idUsuario = req.body.idUsuarioVar;
+    var motivo = req.body.motivoServer;
+    var melhorar = req.body.melhorarServer;
+    var achou = req.body.achouServer;
+    var site = req.body.siteServer;
+    var navegacao = req.body.navegacaoServer;
+    var recomendar = req.body.recomendarServer;
+    var idUsuario = req.body.idUsuarioServer;
 
     // Faça as validações dos valores
     if (motivo == undefined) {
@@ -107,6 +107,24 @@ function feedback(req, res) {
     }
 }
 
+function mediafeedback (req, res){
+    usuarioModel.mediafeedback()
+    .then(
+        function (resultado) {
+            res.json(resultado);
+        }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao realizar a Média do feedback! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
+
 
 
 function cadastrar(req, res) {
@@ -128,7 +146,7 @@ function cadastrar(req, res) {
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrar(nome, cpf, email, senha,)
+        usuarioModel.cadastrar(nome, cpf, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -151,5 +169,6 @@ module.exports = {
     cadastrar,
     listar,
     testar,
-    feedback
+    feedback,
+    mediafeedback
 }

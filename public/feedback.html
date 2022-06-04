@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>Feedback</title>
-
+    
     <script src="./js/funcoes.js"></script>
-
+    
     <link rel="icon" href="assets/image/logo.png">
     <link rel="stylesheet" href="css/header_footer.css">
     <link rel="stylesheet" href="css/feedback.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 </head>
 
-<body>
-
-<div class="header">
-    <a href="index.html" class="logo">
-        <img src="assets/image/logo.png" class="logo_img" />
-    </a>
-
-    <div class="menu">
-        <ul>
-            <li><a id="lutas_marcantes" href="lutas_mais_marcantes.html">Lutas Marcantes</a></li>
+<body onload="metrica()">
+    
+    <div class="header">
+        <a href="index.html" class="logo">
+            <img src="assets/image/logo.png" class="logo_img" />
+        </a>
+        
+        <div class="menu">
+            <ul>
+                <li><a id="lutas_marcantes" href="lutas_mais_marcantes.html">Lutas Marcantes</a></li>
             <li><a href="ranking.html">Melhores Lutadores</li>
             <li><a href="ranking_atual.html">Ranking</a></li>
             <li><a href="simulador.html">IMC</a></li>
@@ -37,6 +37,17 @@
 </div>
 
 <div class="container">
+    <div class="box">
+        <div class="box-cricle">
+            <svg>
+                <circle cx="70" cy="70" r="50"></circle>
+                <circle id="circleProgress" cx="70" cy="70" r="50"></circle>
+            </svg>
+        </div>
+        <div class="number" id="metrica">
+            <p>Média</p>
+        </div>
+    </div>
     <div class="container_feedback">
         <div class="box_1">
             <div class="feedback_p">
@@ -92,7 +103,11 @@
                     </div>
                 </li>
             </ul>
-            <button onclick="guardar()">Clique</button>
+            <div class="button_feedback">
+                <button onclick="guardar(); metrica()">
+                    Clique
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -101,7 +116,7 @@
 <div class="footer">
     <div class="links">
         <p>Contato: (11) 98835-6966
-        <ul>
+            <ul>
             <li>NOVIDADES</li>
             <li>CAMPANHAS</li>
             <li>DOAÇÕES</li>
@@ -125,41 +140,45 @@
     function guardar(){
         var motivoVar = motivo_visita_input.value
         var melhorarVar = melhorar_input.value
-        var achouVar = Number(select_achou.value)
-        var siteVar = Number(select_site.value)
-        var navegacaoVar = Number(select_navegacao.value)
-        var recomendarVar = Number(select_recomendar.value)
+        var achouVar = select_achou.value
+        var siteVar = select_site.value
+        var navegacaoVar = select_navegacao.value
+        var recomendarVar = select_recomendar.value
         var idUsuarioVar = sessionStorage.ID_USUARIO
-        console.log(recomendarVar)
-        if (motivoVar <= 3 || melhorarVar <= 3) {
+
+
+        
+        if (motivoVar.length <= 3) {
             alert(`Dados inválidos`)
-        }
-
-                // Enviando o valor da nova input
-                fetch("/usuarios/feedback", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                motivoServer: motivoVar,
-                melhorarServer: melhorarVar,
-                achouServer: achouVar,
-                siteServer: siteVar,
-                navegacaoServer: navegacaoVar,
-                recomendarServer: recomendarVar,
-                idUsuarioServer: idUsuarioVar
-
+        } else if (melhorarVar.length <= 3) {
+            alert(`Dados inválido`)
+        } else {
+            
+            // Enviando o valor da nova input
+            fetch("/usuarios/feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    motivoServer: motivoVar,
+                    melhorarServer: melhorarVar,
+                    achouServer: achouVar,
+                    siteServer: siteVar,
+                    navegacaoServer: navegacaoVar,
+                    recomendarServer: recomendarVar,
+                    idUsuarioServer: idUsuarioVar
+                    
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                // window.location = "login.html";
                 alert(`Feedback realizado com sucesso`)
+                location.reload();
             } else {
                 throw ("Houve um erro ao tentar realizar o feedback!");
             }
@@ -168,4 +187,31 @@
 
         });
     }
+}
+
+    function metrica(){
+        fetch("/usuarios/feedback")
+        .then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+            resposta.json()
+            .then(function(json){
+                console.log("resposta vindo: ", json[0].Media);
+
+                var circle = document.querySelector('#circleProgress');
+                var number = json[0].Media * 14.26;
+                circle.style.strokeDashoffset = 440 - (440 * number) / 100;
+
+                var metricaTexto = document.getElementById("metrica");
+                metricaTexto.innerHTML = json[0].Media
+            })
+            .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        })
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+    } 
 </script>

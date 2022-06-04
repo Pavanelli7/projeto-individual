@@ -17,7 +17,7 @@
 
 .banner p {
 	font-size: 43px;
-	color: white;
+	color: #c1c0a2;
 }
 
 .button_container {
@@ -79,7 +79,7 @@
 	flex-direction: column;
 	text-align: justify;
 	row-gap: 20px;
-	color: white;
+	color: #c1c0a2;
 	font-size: 23px;
 	font-family: sans-serif;
 }
@@ -106,7 +106,7 @@
 	flex-direction: column;
 	text-align: justify;
 	row-gap: 20px;
-	color: white;
+	color: #c1c0a2;
 	font-size: 23px;
 	font-family: sans-serif;
 }

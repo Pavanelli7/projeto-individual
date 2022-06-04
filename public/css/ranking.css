@@ -40,9 +40,10 @@ body {
     align-items: center;
     width: 30%;
     margin-top: 10px;
+    background-image: linear-gradient(180deg, #000000d1, transparent);
     box-shadow: 0 0 1em black;
     background-color: #0000ff0a;
-    color: white;
+    color: #c1c1a3;
 }
 
 .texto {

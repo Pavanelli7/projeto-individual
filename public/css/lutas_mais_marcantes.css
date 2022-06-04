@@ -16,7 +16,7 @@
 } 
 
 .frase p {
-    color: white;
+    color: #c1c0a3;
 	font-size: 500%;
 	font-family: initial;
 }
@@ -129,11 +129,15 @@
 .p2_luta {
     height: 100%;
     padding: 10px;
-    font-size: 25px;
+    font-size: 20px;
     text-align: justify;
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-around;
+}
+
+#p2_color {
+	color: #c1c0a3;
 }
 
 .luta_1 h1 {

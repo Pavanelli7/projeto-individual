@@ -20,11 +20,11 @@
 	justify-content: center;
 	align-items: center;
 	height: 81%;
-	width: 96%;
+	width: 37%;
 }
 
 .container_feedback ul {
-	font-size: 20px;
+	font-size: 17px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -57,7 +57,7 @@ li {
 }
 
 .box_1 {
-	width: 40%;
+	width: 100%;
 	height: 100%;
 	display: flex;
     flex-direction: column;
@@ -91,10 +91,70 @@ li {
 
 button {
     width: 30%;
-    height: 7%;
+    height: 43%;
     border-radius: 5px;
     color: white;
     box-shadow: 0 5px 10px 0px black;
 	background-color: var(--button_color);
     cursor: pointer;
+	margin-top: 10px;
+}
+
+svg {
+	width: 150px;
+	height: 150px;
+}
+
+circle {
+	width: 150px;
+	height: 150px;
+	fill: none;
+	stroke: black;
+	stroke-width: 10;
+	transform: translate(5px, 5px);
+	stroke-dasharray: 440;
+	stroke-dashoffset: 440;
+}
+
+circle:nth-child(1){
+	stroke-dashoffset: 0;
+	stroke: grey;
+}
+
+circle:nth-child(2){
+	transition: stroke-dashoffset 0.08s;
+	stroke: #6b1a01;
+}
+
+.number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	font-size: 27px;
+	margin-top: 10px;
+}
+
+.box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 187px;
+    margin-top: 438px;
+    height: 136px;
+}
+
+.button_feedback {
+	width: 100%;
+	height: 16%;
+	align-items: flex-start;
+    justify-content: center;
+    display: flex;
 }
